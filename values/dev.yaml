@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: 107995894928.dkr.ecr.us-west-2.amazonaws.com/sample-microservice
+  repository: 000474600478.dkr.ecr.us-east-1.amazonaws.com/sample-microservice-with-spinnaker
   tag: latest
   pullPolicy: Always
 
