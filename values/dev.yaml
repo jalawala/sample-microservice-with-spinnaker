@@ -1,4 +1,4 @@
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: 107995894928.dkr.ecr.us-west-2.amazonaws.com/sample-microservice
