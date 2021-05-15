@@ -1,10 +1,15 @@
 # A Go multistage docker file
+FROM golang:alpine as builder
+RUN mkdir /build 
+ADD . /build/
+WORKDIR /build 
+RUN go env -w GO111MODULE=auto
+RUN go build -o main .
 FROM alpine
 ENV PORT 8080
 EXPOSE 8080
-ADD . /app
 RUN adduser -S -D -H -h /app appuser
 USER appuser
-#COPY --from=builder /build/main /app/
+COPY --from=builder /build/main /app/
 WORKDIR /app
 CMD ["./main"]
